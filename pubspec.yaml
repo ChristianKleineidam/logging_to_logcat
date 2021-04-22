@@ -1,8 +1,8 @@
 name: logger_to_logcat
-description: Adds activateLogcat method to Logger which results in everything that's
+description: Adds activateLogcat() method to Logger which results in everything that's
   logged to Logger being displayed by Android's logcat.
 version: 0.0.1
-homepage:
+homepage: https://github.com/ChristianKleineidam/logger_to_logcat
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

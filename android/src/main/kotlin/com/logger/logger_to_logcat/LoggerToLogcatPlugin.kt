@@ -22,6 +22,7 @@ class LoggerToLogcatPlugin: FlutterPlugin, MethodCallHandler {
     channel.setMethodCallHandler(this)
   }
 
+
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "log" && call.arguments is List<*>) {
       val args = call.arguments as List<*>
@@ -45,7 +46,10 @@ class LoggerToLogcatPlugin: FlutterPlugin, MethodCallHandler {
             result.notImplemented()
           }
         }
-      } else {
+          when(level){
+            "SHOUT", "SEVERE", "WARNING", "INFO", "CONFIG",
+            "FINE", "FINER", "FINEST" -> result.success()
+          }
       }
     } else {
       result.notImplemented()

@@ -9,12 +9,9 @@ class LoggerToLogcat {
 
 extension LogcatExtension on Logger {
   Future activateLogcat() async {
-    // return Future.delayed(const Duration(seconds: 1), () {
-    final channel = MethodChannel("logcat");
     this.onRecord.listen((record) {
       LoggerToLogcat._channel.invokeListMethod(
           "log", [record.level.name, record.message, record.loggerName]);
     });
-    // });
   }
 }
