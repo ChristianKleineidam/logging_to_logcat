@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/logger_to_logcat.iml" filepath="$PROJECT_DIR$/logger_to_logcat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/logger_to_logcat_android.iml" filepath="$PROJECT_DIR$/android/logger_to_logcat_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/android/logger_to_logcat_example_android.iml" filepath="$PROJECT_DIR$/example/android/logger_to_logcat_example_android.iml" />
+    </modules>
+  </component>
+</project>
