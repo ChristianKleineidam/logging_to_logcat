@@ -46,10 +46,10 @@ class LoggingToLogcatPlugin: FlutterPlugin, MethodCallHandler {
             result.notImplemented()
           }
         }
-          when(level){
-            "SHOUT", "SEVERE", "WARNING", "INFO", "CONFIG",
-            "FINE", "FINER", "FINEST" -> result.success()
-          }
+//          when(level){
+//            "SHOUT", "SEVERE", "WARNING", "INFO", "CONFIG",
+//            "FINE", "FINER", "FINEST" -> result.success(listOf<String>())
+//          }
       }
       else{
         result.notImplemented()

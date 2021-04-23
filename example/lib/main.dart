@@ -71,7 +71,7 @@ class _MyAppState extends State<MyApp> {
                   child: SingleChildScrollView(
                     child: Text(
                       '$_logDisplayText',
-                      textScaleFactor: 1.5,
+                      textScaleFactor: 1.4,
                     ),
                   ),
                 ),
@@ -80,9 +80,12 @@ class _MyAppState extends State<MyApp> {
                 ),
                 OutlinedButton(
                   onPressed: playWithLogcat,
-                  child: Text("Play with 😼 Logcat 🐈"),
+                  child: Text(
+                    "Play with 😼 Logcat 🐈",
+                    style: TextStyle(fontSize: 20),
+                  ),
                   style:
-                      OutlinedButton.styleFrom(minimumSize: Size(50.0, 50.0)),
+                      OutlinedButton.styleFrom(minimumSize: Size(60.0, 60.0)),
                 ),
                 SizedBox(
                   height: 64.0,
