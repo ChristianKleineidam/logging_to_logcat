@@ -17,14 +17,14 @@ Logger.root.activateLogcat();
 Logger has a more fine-grained way of defining logging levels then Android. This plugin does the
 following mappings:
 
-SHOUT -> ERROR  
-SEVERE -> Error  
-WARNING -> WARNING  
-INFO -> INFO  
-CONFIG -> DEBUG  
-FINE -> VERBOSE  
+FINEST -> VERBOSE  
 FINER -> VERBOSE  
-FINEST -> VERBOSE
+FINE -> VERBOSE  
+CONFIG -> DEBUG  
+INFO -> INFO  
+WARNING -> WARNING  
+SEVERE -> ERROR  
+SHOUT -> ERROR  
 
 Note that by default Logger silences messages under the level of INFO. If it's desired that all
 Logging makes it to Logcat it's necessary to call:
