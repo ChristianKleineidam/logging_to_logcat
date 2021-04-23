@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.logger.logger_to_logcat_example">
+    package="com.logger.logging_to_logcat_example">
    <application
-        android:label="logger_to_logcat_example"
+        android:label="logging_to_logcat_example"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

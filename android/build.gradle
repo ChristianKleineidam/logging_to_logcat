@@ -1,4 +1,4 @@
-group 'com.logger.logger_to_logcat'
+group 'com.logger.logging_to_logcat'
 version '1.0-SNAPSHOT'
 
 buildscript {

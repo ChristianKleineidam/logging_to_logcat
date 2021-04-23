@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:logcat/logcat.dart';
-import 'package:logger_to_logcat/logger_to_logcat.dart';
 import 'package:logging/logging.dart';
+import 'package:logging_to_logcat/logging_to_logcat.dart';
 
 void main() {
   runApp(MyApp());

@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint logger_to_logcat.podspec` to validate before publishing.
+# Run `pod lib lint logging_to_logcat.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'logger_to_logcat'
+  s.name             = 'logging_to_logcat'
   s.version          = '0.0.1'
   s.summary          = 'Adds activateLogCat method to Logger'
   s.description      = <<-DESC

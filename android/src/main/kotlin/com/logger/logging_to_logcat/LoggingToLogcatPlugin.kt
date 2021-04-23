@@ -1,4 +1,4 @@
-package com.logger.logger_to_logcat
+package com.logger.logging_to_logcat
 
 import android.util.Log
 import androidx.annotation.NonNull
@@ -10,7 +10,7 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 
 /** LoggerToLogcatPlugin */
-class LoggerToLogcatPlugin: FlutterPlugin, MethodCallHandler {
+class LoggingToLogcatPlugin: FlutterPlugin, MethodCallHandler {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -18,7 +18,7 @@ class LoggerToLogcatPlugin: FlutterPlugin, MethodCallHandler {
   private lateinit var channel: MethodChannel
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "logger_to_logcat")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "logging_to_logcat")
     channel.setMethodCallHandler(this)
   }
 

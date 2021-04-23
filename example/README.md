@@ -1,6 +1,6 @@
-# logger_to_logcat_example
+# logging_to_logcat_example
 
-Demonstrates how to use the logger_to_logcat plugin.
+Demonstrates how to use the logging_to_logcat plugin.
 
 ## Getting Started
 

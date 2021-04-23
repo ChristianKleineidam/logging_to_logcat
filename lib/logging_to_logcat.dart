@@ -4,7 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:logging/logging.dart';
 
 class LoggerToLogcat {
-  static const MethodChannel _channel = const MethodChannel('logger_to_logcat');
+  static const MethodChannel _channel =
+      const MethodChannel('logging_to_logcat');
 }
 
 extension LogcatExtension on Logger {
