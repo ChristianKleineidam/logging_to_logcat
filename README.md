@@ -5,7 +5,7 @@ to deliver it's logs to Android's [Logcat](https://developer.android.com/studio/
 
 ## Usage
 
-After adding the package it's easy to instruct Logger to send it's logging data to Androids Logcat:
+After adding the package it's easy to instruct Logger to send it's logging data to Android's Logcat:
 
 ```dart
 import 'package:logger_to_logcat/logger_to_logcat.dart';
