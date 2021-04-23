@@ -51,6 +51,9 @@ class LoggerToLogcatPlugin: FlutterPlugin, MethodCallHandler {
             "FINE", "FINER", "FINEST" -> result.success()
           }
       }
+      else{
+        result.notImplemented()
+      }
     } else {
       result.notImplemented()
     }

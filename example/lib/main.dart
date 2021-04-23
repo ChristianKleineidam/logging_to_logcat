@@ -17,12 +17,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String _logDisplayText = '';
 
-  @override
-  void initState() {
-    super.initState();
-  }
-
   static const String FINE_MESSAGE = "This is a fine message";
+  static const String CONFIG_MESSAGE = "This is a config message";
   static const String INFO_MESSAGE = "This is a info message";
   static const String WARNING_MESSAGE = "This is a warning message";
   static const String ERROR_MESSAGE = "This is a error message";
@@ -45,6 +41,7 @@ class _MyAppState extends State<MyApp> {
 
     Logger log = Logger("ExampleLogger");
     log.fine(FINE_MESSAGE);
+    log.config(CONFIG_MESSAGE);
     log.info(INFO_MESSAGE);
     log.warning(WARNING_MESSAGE);
     log.severe(ERROR_MESSAGE);
@@ -83,7 +80,7 @@ class _MyAppState extends State<MyApp> {
                 ),
                 OutlinedButton(
                   onPressed: playWithLogcat,
-                  child: Text("Play with Logcat"),
+                  child: Text("Play with 😼 Logcat 🐈"),
                   style:
                       OutlinedButton.styleFrom(minimumSize: Size(50.0, 50.0)),
                 ),

@@ -1,11 +1,11 @@
-name: logger_to_logcat
-description: Adds activateLogcat() method to Logger which results in everything that's
+name: logging_to_logcat
+description: Adds activateLogcat() method to logging's Logger class which results in everything that's
   logged to Logger being displayed by Android's logcat.
 version: 0.0.1
 homepage: https://github.com/ChristianKleineidam/logger_to_logcat
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.20.0"
 
 dependencies:
