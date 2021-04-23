@@ -18,12 +18,19 @@ Logger has a more fine-grained way of defining logging levels then Android. This
 following mappings:
 
 SHOUT -> ERROR
+
 SEVERE -> Error
+
 WARNING -> WARNING
+
 INFO -> INFO
+
 CONFIG -> DEBUG
+
 FINE -> VERBOSE
+
 FINER -> VERBOSE
+
 FINEST -> VERBOSE
 
 Note that by default Logger silences messages under the level of INFO. If it's desired that all
