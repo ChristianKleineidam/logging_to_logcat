@@ -1,3 +1,3 @@
-## 0.0.1
+## 0.0.4
 
-* TODO: Describe initial release.
+Adds dartdoc comments and makes LoggerToLogcat private which doesn't need to be exposed
