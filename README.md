@@ -33,3 +33,5 @@ Logging makes it to Logcat it's necessary to call:
 Logger.root.level = Level.ALL;
 ```
 
+## Contributions
+Especially, given that this is the first package I published on pub.dev I'm happy about any pointers of how it can be improved. 
