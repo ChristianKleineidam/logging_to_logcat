@@ -9,8 +9,12 @@ After adding the package it's easy to instruct Logger to send it's logging data 
 
 ```dart
 import 'package:logging_to_logcat/logging_to_logcat.dart';
+import 'package:logging/logging.dart';
 
 Logger.root.activateLogcat();
+
+final Logger log = Logger("MyLogger");
+log.info('demo logline!');
 ```
 
 ## Documentation
