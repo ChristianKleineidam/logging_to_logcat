@@ -41,15 +41,11 @@ class LoggingToLogcatPlugin: FlutterPlugin, MethodCallHandler {
           "FINER" -> Log.v(name, message)
           "FINEST" -> Log.v(name, message)
 
-          else -> { // Note the block
+          else -> {
             Log.e(name, "$level is not a support log-level")
             result.notImplemented()
           }
         }
-//          when(level){
-//            "SHOUT", "SEVERE", "WARNING", "INFO", "CONFIG",
-//            "FINE", "FINER", "FINEST" -> result.success(listOf<String>())
-//          }
       }
       else{
         result.notImplemented()
