@@ -22,7 +22,6 @@ class LoggingToLogcatPlugin: FlutterPlugin, MethodCallHandler {
     channel.setMethodCallHandler(this)
   }
 
-
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "log" && call.arguments is List<*>) {
       val args = call.arguments as List<*>
@@ -32,14 +31,11 @@ class LoggingToLogcatPlugin: FlutterPlugin, MethodCallHandler {
         val name: String = args[2] as String
 
         when (level) {
-          "SHOUT" -> Log.e(name, message)
-          "SEVERE" -> Log.e(name, message)
+          "SHOUT", "SEVERE" -> Log.e(name, message)
           "WARNING" -> Log.w(name, message)
           "INFO" -> Log.i(name, message)
           "CONFIG" -> Log.d(name, message)
-          "FINE" -> Log.v(name, message)
-          "FINER" -> Log.v(name, message)
-          "FINEST" -> Log.v(name, message)
+          "FINE","FINER","FINEST" -> Log.v(name, message)
 
           else -> {
             Log.e(name, "$level is not a support log-level")

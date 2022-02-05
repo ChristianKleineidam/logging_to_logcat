@@ -10,9 +10,10 @@ class _LoggerToLogcat {
 
 /// Extension for Logger of the logging package
 extension LogcatExtension on Logger {
-  /// Makes the logger write it's output to Androids logcat
+  /// Makes the logger write it's output to Androids logcat. Does only have to
+  /// be called once during the startup of the app.
   Future activateLogcat() async {
-    this.onRecord.listen((record) {
+    this.onRecord.listen((LogRecord record) {
       _LoggerToLogcat._channel.invokeListMethod(
           "log", [record.level.name, record.message, record.loggerName]);
     });
