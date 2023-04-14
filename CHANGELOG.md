@@ -1,3 +1,6 @@
+## 1.0.0
+Updated the example app to Dart 3.0.
+
 ## 0.1.1
 Improved function documentation.
 

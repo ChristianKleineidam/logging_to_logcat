@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:logging/logging.dart';
 
+/// Class containing the method channel
 class _LoggerToLogcat {
   static const MethodChannel _channel =
       const MethodChannel('logging_to_logcat');

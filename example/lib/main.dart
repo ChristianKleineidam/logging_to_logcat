@@ -1,12 +1,38 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:logcat/logcat.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logging/logging.dart';
 import 'package:logging_to_logcat/logging_to_logcat.dart';
+import 'package:logging_to_logcat_example/log_cat_bloc.dart';
+
+const String FINE_MESSAGE = "This is a fine message";
+const String CONFIG_MESSAGE = "This is a config message";
+const String INFO_MESSAGE = "This is a info message";
+const String WARNING_MESSAGE = "This is a warning message";
+const String ERROR_MESSAGE = "This is a error message";
+
+Future initLogging() async {
+  Logger.root.activateLogcat();
+  Logger.root.level = Level.ALL;
+}
+
+Future addLog() async {
+  Logger log = Logger("ExampleLogger");
+  log.fine(FINE_MESSAGE);
+  log.config(CONFIG_MESSAGE);
+  log.info(INFO_MESSAGE);
+  log.warning(WARNING_MESSAGE);
+  log.severe(ERROR_MESSAGE);
+}
 
 void main() {
-  runApp(MyApp());
+  initLogging();
+
+  runApp(BlocProvider<LogCatBloc>(
+    create: (context) => LogCatBloc(),
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -15,44 +41,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _logDisplayText = '';
-
-  static const String FINE_MESSAGE = "This is a fine message";
-  static const String CONFIG_MESSAGE = "This is a config message";
-  static const String INFO_MESSAGE = "This is a info message";
-  static const String WARNING_MESSAGE = "This is a warning message";
-  static const String ERROR_MESSAGE = "This is a error message";
-
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {}
 
   Future<void> playWithLogcat() async {
-    var text = await getLogtext();
-
+    addLog();
     setState(() {
-      _logDisplayText = text;
+      //_logDisplayText = text;
     });
-  }
-
-  static Future<String> getLogtext() async {
-    String oldLogs = await Logcat.execute();
-    Logger.root.activateLogcat();
-    Logger.root.level = Level.ALL;
-
-    Logger log = Logger("ExampleLogger");
-    log.fine(FINE_MESSAGE);
-    log.config(CONFIG_MESSAGE);
-    log.info(INFO_MESSAGE);
-    log.warning(WARNING_MESSAGE);
-    log.severe(ERROR_MESSAGE);
-
-    String newLogs = await Logcat.execute();
-    var diffText = newLogs.replaceAll(oldLogs, "");
-    diffText = diffText.replaceAllMapped(RegExp(r"(\d\d-\d\d)"), (match) {
-      return '\n\n${match.group(0)}';
-    });
-
-    return diffText;
   }
 
   @override
@@ -68,11 +64,20 @@ class _MyAppState extends State<MyApp> {
             child: Column(
               children: [
                 Expanded(
-                  child: SingleChildScrollView(
-                    child: Text(
-                      '$_logDisplayText',
-                      textScaleFactor: 1.4,
-                    ),
+                  child: BlocBuilder<LogCatBloc, LogCatState>(
+                    builder: (context, state) {
+                      List<Widget> widgetList =
+                          state.logEntryList.map((String item) {
+                        return ListTile(
+                            title: Text(item, style: TextStyle(fontSize: 20)));
+                      }).toList();
+
+                      return ListView.builder(
+                          itemCount: state.logEntryList.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return widgetList[index];
+                          });
+                    },
                   ),
                 ),
                 SizedBox(
