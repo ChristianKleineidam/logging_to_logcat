@@ -20,6 +20,15 @@ allprojects {
 
 rootProject.buildDir = '../build'
 subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            project.android {
+                if(project.group == 'com.logger.logging_to_logcat') {
+                    namespace 'com.logger.logging_to_logcat'
+                }
+            }
+        }
+    }
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 subprojects {
