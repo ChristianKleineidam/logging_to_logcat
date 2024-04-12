@@ -1,3 +1,6 @@
+## 1.0.2
+Recreated empty AndroidManifest.xml file for backward compatibility.
+
 ## 1.0.1
 Moved package declaration from AndroidManifest.xml to build.gradle because of gradle 8 requirement.
 
