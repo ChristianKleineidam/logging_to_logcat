@@ -1,3 +1,7 @@
+## 1.0.3
+Fixes issues.
+
+
 ## 1.0.2
 Recreated empty AndroidManifest.xml file for backward compatibility.
 
