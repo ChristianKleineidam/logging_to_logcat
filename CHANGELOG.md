@@ -1,3 +1,6 @@
+## 1.0.4
+Fixes issues with JVM-target compatibility.
+
 ## 1.0.3
 Fixes issues.
 

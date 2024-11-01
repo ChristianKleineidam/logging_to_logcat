@@ -1,7 +1,7 @@
 name: logging_to_logcat
 description: Adds activateLogcat() method to logging's Logger class which results in everything that's
   logged to Logger being displayed by Android's logcat.
-version: 1.0.3
+version: 1.0.4
 homepage: https://github.com/ChristianKleineidam/logging_to_logcat
 
 environment:
