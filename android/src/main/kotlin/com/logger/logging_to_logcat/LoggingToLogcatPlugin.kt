@@ -31,11 +31,26 @@ class LoggingToLogcatPlugin: FlutterPlugin, MethodCallHandler {
         val name: String = args[2] as String
 
         when (level) {
-          "SHOUT", "SEVERE" -> Log.e(name, message)
-          "WARNING" -> Log.w(name, message)
-          "INFO" -> Log.i(name, message)
-          "CONFIG" -> Log.d(name, message)
-          "FINE","FINER","FINEST" -> Log.v(name, message)
+          "SHOUT", "SEVERE" -> {
+            Log.e(name, message)
+            result.success(null)
+          }
+          "WARNING" -> {
+            Log.w(name, message)
+            result.success(null)
+          }
+          "INFO" -> {
+            Log.i(name, message)
+            result.success(null)
+          }
+          "CONFIG" -> {
+            Log.d(name, message)
+            result.success(null)
+          }
+          "FINE","FINER","FINEST" -> {
+            Log.v(name, message)
+            result.success(null)
+          }
 
           else -> {
             Log.e(name, "$level is not a support log-level")
