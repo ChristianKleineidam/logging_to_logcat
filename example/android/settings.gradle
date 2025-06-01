@@ -1,14 +1,21 @@
+// example/android/settings.gradle
 pluginManagement {
-    def localPropertiesFile = new File(settingsDir, "local.properties")
-    def properties = new Properties()
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    plugins {
+        id "com.android.application" version "8.4.0"
+        id "org.jetbrains.kotlin.android" version "2.1.0"
+        id "dev.flutter.flutter-gradle-plugin" version "1.0.0" // adjust if needed
+    }
 
-    assert localPropertiesFile.exists()
-    localPropertiesFile.withReader("UTF-8") { reader -> properties.load(reader) }
-
-    def flutterSdkPath = properties.getProperty("flutter.sdk")
-    assert flutterSdkPath != null, "flutter.sdk not set in local.properties"
-
-    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
+    // include Flutter’s build scripts
+    def localProperties = new Properties()
+    new File(settingsDir, "local.properties")
+            .withReader("UTF-8") { reader -> localProperties.load(reader) }
+    includeBuild("${localProperties.getProperty('flutter.sdk')}/packages/flutter_tools/gradle")
 }
 
 plugins {
