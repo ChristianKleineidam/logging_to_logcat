@@ -13,7 +13,7 @@ class _LoggerToLogcat {
 extension LogcatExtension on Logger {
   /// write its output.
   /// be called once during the startup of the app.
-  Future activateLogcat() async {
+  Future<void> activateLogcat() async {
     this.onRecord.listen((LogRecord record) {
       _LoggerToLogcat._channel.invokeListMethod(
           "log", [record.level.name, record.message, record.loggerName]);

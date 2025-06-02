@@ -1,11 +1,10 @@
 # logging_to_logcat
 
-This package extends the [logging](https://pub.dev/packages/logging)-package with the functionality
-deliver its logs
+This package extends the [logging](https://pub.dev/packages/logging) package with
+an extension that forwards log output to Android's Logcat. Invoke
+`Logger.root.activateLogcat()` during startup to begin sending logs.
 
 ## Usage
-
-send its logging data.
 
 ```dart
 import 'package:logging_to_logcat/logging_to_logcat.dart';
