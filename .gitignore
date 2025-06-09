@@ -8,3 +8,5 @@ build/
 .idea
 /android/.idea/caches/build_file_checksums.ser
 *.iml
+flutter/
+flutter.tar.xz
