@@ -13,17 +13,9 @@ import 'package:logging/logging.dart';
 Logger.root.activateLogcat();
 
 final Logger log = Logger("MyLogger");
-log.info('demo logline!');
+log.info("demo logline!");
 ```
 
-## Development Setup
-
-Run `tool/setup.sh` to install Flutter (if necessary) and fetch this package's
-dependencies before executing tests or examples:
-
-```bash
-bash tool/setup.sh
-```
 
 ## Documentation
 Logger has a more fine-grained way of defining logging levels then Android. This plugin does the
