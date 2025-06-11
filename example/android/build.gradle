@@ -25,6 +25,9 @@ subprojects {
             project.android {
                 if(project.group == 'com.logger.logging_to_logcat') {
                     namespace 'com.logger.logging_to_logcat'
+                } else if(project.name == 'logcat_monitor') {
+                    // Old plugin missing namespace; define it here for AGP 8
+                    namespace 'com.example.logcat_monitor'
                 }
             }
         }

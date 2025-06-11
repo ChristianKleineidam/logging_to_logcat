@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    // Apply Flutter plugin to add embedding dependencies
+    id("dev.flutter.flutter-gradle-plugin")
 }
 
 java {
