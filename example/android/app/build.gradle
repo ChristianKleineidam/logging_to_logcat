@@ -22,6 +22,7 @@ def flutterVersionName = localProperties.getProperty('flutter.versionName') ?: '
 
 android {
     compileSdkVersion 34
+    namespace "com.logger.logging_to_logcat_example"
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
