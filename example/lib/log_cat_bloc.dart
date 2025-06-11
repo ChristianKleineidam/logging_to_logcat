@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:logcat_monitor/logcat_monitor.dart';
+import 'package:logging_to_logcat/logging_to_logcat.dart';
 
 part 'log_cat_event.dart';
 part 'log_cat_state.dart';

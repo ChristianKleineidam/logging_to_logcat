@@ -9,7 +9,6 @@ environment:
   sdk: ">=3.0.0-1.0.dev <4.0.0"
 
 dependencies:
-  logcat_monitor : ^0.0.6
   logging: ^1.2.0
   bloc: ^8.1.1
   flutter_bloc: ^8.1.2
