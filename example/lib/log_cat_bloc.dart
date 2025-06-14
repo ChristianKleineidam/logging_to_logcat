@@ -2,8 +2,8 @@ import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:logcat_monitor/logcat_monitor.dart';
+// Log monitoring is disabled in this simplified example, so the
+// logcat_monitor package is no longer required.
 
 part 'log_cat_event.dart';
 part 'log_cat_state.dart';
@@ -11,14 +11,9 @@ part 'log_cat_state.dart';
 class LogCatBloc extends Bloc<LogCatEvent, LogCatState> {
   List<String> logList = [];
 
-  Future<void> initPlatformState() async {
-    try {
-      LogcatMonitor.addListen(_listenStream);
-    } on PlatformException {
-      debugPrint('Failed to listen Stream of log.');
-    }
-    await LogcatMonitor.startMonitor("*.*");
-  }
+  /// Log monitoring is disabled. This method is retained so the
+  /// constructor's call remains valid but it performs no work.
+  Future<void> initPlatformState() async {}
 
   LogCatBloc() : super(LogCatInitial()) {
     initPlatformState();
