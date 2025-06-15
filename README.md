@@ -37,5 +37,12 @@ Logging makes it to Logcat it's necessary to call:
 Logger.root.level = Level.ALL;
 ```
 
+## Building the Android example
+
+The Android sample bundled with this plugin now uses Gradle 8.5 together with
+the Android Gradle plugin 8.5.0. This toolchain supports running on **Java 21**,
+so you can keep your `JAVA_HOME` pointing at a JDK 21 installation when
+invoking `flutter build` or `flutter run`.
+
 ## Contributions
-Especially, given that this is the first package I published on pub.dev I'm happy about any pointers of how it can be improved. 
+Especially, given that this is the first package I published on pub.dev I'm happy about any pointers of how it can be improved.
